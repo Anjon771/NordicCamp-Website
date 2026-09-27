@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+   
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+
+   <title>Responsive Camping Website</title>
+   <meta name="description" content="Responsive camping website design using HTML, CSS, and JavaScript with GSAP animations.">
+   <meta property="og:title" content="Responsive Camping Website">
+   <meta property="og:description" content="Responsive camping website design using HTML, CSS, and JavaScript with GSAP animations.">
+</head>
+<body>
+   <!--==================== HEADER (3-Zone Top Bar Contract) ====================-->
+   <header class="header" id="header">
+      <div class="nav container">
+         <!-- Zone 1: Single text element wordmark -->
+         <a href="#home" class="nav__logo">NordicCamp</a>
+
+         <!-- Zone 2: 5 clean text navigation links -->
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li class="nav__item">
+                  <a href="#destinations" class="nav__link">Destinations</a>
+               </li>
+               <li class="nav__item">
+                  <a href="#capabilities" class="nav__link">Capabilities</a>
+               </li>
+               <li class="nav__item">
+                  <a href="#events" class="nav__link">Events</a>
+               </li>
+               <li class="nav__item">
+                  <a href="#pricing" class="nav__link">Pricing</a>
+               </li>
+               <li class="nav__item">
+                  <a href="#contact" class="nav__link">Reserve</a>
+               </li>
+            </ul>
+
+            <button type="button" class="nav__close" id="nav-close" aria-label="Close navigation menu">
+               <i class="ri-close-line"></i>
+            </button>
+         </div>
+
+         <!-- Zone 3: 1-2 primary actions -->
+         <div class="nav__actions">
+            <button type="button" class="nav__button-link" id="open-login-modal">
+               Member Sign In
+            </button>
+            <a href="#contact" class="nav__button-ghost" id="header-reserve-cta">
+               Book Expedition
+            </a>
+            <button type="button" class="nav__toggle" id="nav-toggle" aria-label="Open navigation menu">
+               <i class="ri-menu-line"></i>
+            </button>
+         </div>
+      </div>
+   </header>
+
+   <!--==================== MAIN ====================-->
+   <main class="main">
+      <!--==================== 1. HERO / PROPOSITION ====================-->
+      <section class="home" id="home">
+         <div class="home__container container">
+            <div class="home__content">
+               <div class="home__data">
+                  <p class="home__kicker">
+                     Chamonix · Jotunheimen · Dolomites · 14 Protected Reserves
+                  </p>
+
+                  <h1 class="home__title">
+                     Camping Events To Remember
+                  </h1>
+
+                  <p class="home__description">
+                     Turnkey 4-season canvas basecamps, solar-powered backcountry outfitting, and IFMGA-guided wilderness expeditions across Europe and North America.
+                  </p>
+
+                  <div class="home__cta-group">
+                     <a href="#destinations" class="home__button">
+                        Explore Basecamps
+                     </a>
+                     <a href="#pricing" class="home__secondary-link">
+                        Compare 2026 Pass Tiers
+                     </a>
+                  </div>
+
+                  <div class="home__trust-meta">
+                     <span>14,820+ Nights Logged</span>
+                     <span aria-hidden="true">·</span>
+                     <span>ISO 14001 Wilderness Certified</span>
+                     <span aria-hidden="true">·</span>
+                     <span>Satellite Rescue Dispatch</span>
+                  </div>
+               </div>
+
+               <img src="assets/img/bird-1.svg" alt="Flying alpine bird illustration" class="home__bird-1" referrerpolicy="no-referrer">
+               <img src="assets/img/bird-2.svg" alt="Soaring mountain bird illustration" class="home__bird-2" referrerpolicy="no-referrer">
+            </div>
+
+            <div class="home__images" aria-hidden="true">
+               <img src="assets/img/img-4.svg" alt="Distant mountain peaks and clouds" class="home__img-4" referrerpolicy="no-referrer">
+               <img src="assets/img/img-3.svg" alt="Midground alpine hills" class="home__img-3" referrerpolicy="no-referrer">
+               <img src="assets/img/img-2.svg" alt="Pine forest silhouette" class="home__img-2" referrerpolicy="no-referrer">
+               <img src="assets/img/img-1.svg" alt="Illuminated expedition tent" class="home__img-1" referrerpolicy="no-referrer">
+            </div>
+         </div>
+      </section>
+
+      <!--==================== 2. DESTINATIONS / BASECAMPS ====================-->
+      <section class="section destinations" id="destinations">
+         <div class="container">
+            <div class="section__header">
+               <div class="section__header-left">
+                  <p class="section__eyebrow">01. Curated Wilderness Outposts</p>
+                  <h2 class="section__title">Architectural Canvas Basecamps in Protected Terrain</h2>
+                  <p class="section__subtitle">
+                     Every outpost is pre-pitched on low-impact cedar platforms with wood-burning titanium stoves, satellite telemetry, and potable glacial filtration.
+                  </p>
+               </div>
+
+               <div class="destinations__controls">
+                  <!-- Interactive Filter Tabs -->
+                  <div class="segmented-control" role="tablist" aria-label="Filter basecamps by terrain">
+                     <button type="button" class="segmented-control__btn is-active" data-filter="all" role="tab" aria-selected="true">
+                        All Reserves (6)
+                     </button>
+                     <button type="button" class="segmented-control__btn" data-filter="alpine" role="tab" aria-selected="false">
+                        Alpine Ridges
+                     </button>
+                     <button type="button" class="segmented-control__btn" data-filter="forest" role="tab" aria-selected="false">
+                        Glacial Lakes
+                     </button>
+                     <button type="button" class="segmented-control__btn" data-filter="fjord" role="tab" aria-selected="false">
+                        Fjord Coasts
+                     </button>
+                  </div>
+
+                  <div class="destinations__sort-row">
+                     <label for="destination-search" class="sr-only">Search basecamps</label>
+                     <div class="search-input-wrap">
+                        <i class="ri-search-line" aria-hidden="true"></i>
+                        <input type="search" id="destination-search" class="search-input" placeholder="Search region or peak...">
+                     </div>
+
+                     <label for="destination-sort" class="sr-only">Sort basecamps</label>
+                     <select id="destination-sort" class="sort-select">
+                        <option value="featured">Sort: Featured Sequence</option>
+                        <option value="elevation-desc">Elevation: Highest First</option>
+                        <option value="price-asc">Nightly Rate: Low to High</option>
+                        <option value="price-desc">Nightly Rate: High to Low</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Dynamic Basecamp Grid rendered and enhanced via JS, with initial SSR markup for zero-latency -->
+            <div class="destinations__grid" id="destinations-grid">
+               <!-- Card 1 -->
+               <article class="camp-card" data-category="alpine" data-elevation="2480" data-price="340" data-id="aiguille-ridge">
+                  <div class="camp-card__media">
+                     <img
+                        src="/src/assets/images/camp_alpine_ridge_1790519654591.jpg"
+                        alt="Canvas expedition tent pitched on an alpine granite ridge at golden hour"
+                        class="camp-card__img"
+                        referrerpolicy="no-referrer"
+                        onerror="this.parentElement.classList.add('img-fallback-active')"
+                     >
+                     <div class="camp-card__fallback" aria-hidden="true">
+                        <span>Aiguille Granite Ridge · 2,480m</span>
+                     </div>
+                     <div class="camp-card__scrim">
+                        <span class="camp-card__coords">45°55'23"N 06°52'11"E</span>
+                     </div>
+                  </div>
+                  <div class="camp-card__body">
+                     <div class="camp-card__meta">
+                        <span>Chamonix Mont-Blanc</span>
+                        <span aria-hidden="true">·</span>
+                        <span class="tabular-nums">2,480m Elevation</span>
+                        <span aria-hidden="true">·</span>
+                        <span>4-Season Wall Tent</span>
+                     </div>
+                     <h3 class="camp-card__title">Aiguille Granite Ridge Outpost</h3>
+                     <p class="camp-card__desc">
+                        High-altitude cedar deck overlooking the Bossons glacier tongue. Equipped with dual-wall insulated cotton canvas, titanium stove, and fixed crampon rack.
+                     </p>
+                     <div class="camp-card__specs tabular-nums">
+                        <div>
+                           <span class="spec-label">Capacity</span>
+                           <strong class="spec-val">2–4 Climbers</strong>
+                        </div>
+                        <div>
+                           <span class="spec-label">Nightly Window</span>
+                           <strong class="spec-val">-14°C Rated</strong>
+                        </div>
+                        <div>
+                           <span class="spec-label">Outfitting Rate</span>
+                           <strong class="spec-val">$340 / night</strong>
+                        </div>
+                     </div>
+                     <div class="camp-card__actions">
+                        <button type="button" class="btn-secondary js-inspect-camp" data-camp-id="aiguille-ridge">
+                           Inspect Trail &amp; Gear
+                        </button>
+                        <button type="button" class="btn-primary js-select-camp" data-camp-name="Aiguille Granite Ridge Outpost" data-camp-price="340">
+                           Select Basecamp
+                        </button>
+                     </div>
+                  </div>
+               </article>
+
+               <!-- Card 2 -->
+               <article class="camp-card" data-category="forest" data-elevation="1120" data-price="260" data-id="sylarna-pine">
+                  <div class="camp-card__media">
+                     <img
+                        src="/src/assets/images/camp_pine_lake_1790519672405.jpg"
+                        alt="Pine forest basecamp beside a mirror-still glacial mountain lake at dawn"
+                        class="camp-card__img"
+                        referrerpolicy="no-referrer"
+                        onerror="this.parentElement.classList.add('img-fallback-active')"
+                     >
+                     <div class="camp-card__fallback" aria-hidden="true">
+                        <span>Sylarna Mirror Lake · 1,120m</span>
+                     </div>
+                     <div class="camp-card__scrim">
+                        <span class="camp-card__coords">63°02'19"N 12°16'40"E</span>
+                     </div>
+                  </div>
+                  <div class="camp-card__body">
+                     <div class="camp-card__meta">
+                        <span>Jämtland Boreal Reserve</span>
+                        <span aria-hidden="true">·</span>
+                        <span class="tabular-nums">1,120m Elevation</span>
+                        <span aria-hidden="true">·</span>
+                        <span>Canoe &amp; Timber Dock</span>
+                     </div>
+                     <h3 class="camp-card__title">Sylarna Mirror Lake Sanctuary</h3>
+                     <p class="camp-card__desc">
+                        Secluded old-growth conifer peninsula with private cedar canoe mooring, wood-fired shoreline sauna tent, and cold-water char fishing gear.
+                     </p>
+                     <div class="camp-card__specs tabular-nums">
+                        <div>
+                           <span class="spec-label">Capacity</span>
+                           <strong class="spec-val">2–6 Guests</strong>
+                        </div>
+                        <div>
+                           <span class="spec-label">Nightly Window</span>
+                           <strong class="spec-val">-6°C Rated</strong>
+                        </div>
+                        <div>
+                           <span class="spec-label">Outfitting Rate</span>
+                           <strong class="spec-val">$260 / night</strong>
+                        </div>
+                     </div>
+                     <div class="camp-card__actions">
+                        <button type="button" class="btn-secondary js-inspect-camp" data-camp-id="sylarna-pine">
+                           Inspect Trail &amp; Gear
+                        </button>
+                        <button type="button" class="btn-primary js-select-camp" data-camp-name="Sylarna Mirror Lake Sanctuary" data-camp-price="260">
+                           Select Basecamp
+                        </button>
+                     </div>
+                  </div>
+               </article>
+
+               <!-- Card 3 -->
+               <article class="camp-card" data-category="fjord" data-elevation="490" data-price="310" data-id="naeroy-bluff">
+                  <div class="camp-card__media">
+                     <img
+                        src="/src/assets/images/camp_fjord_coast_1790519686580.jpg"
+                        alt="Wilderness basecamp on a mossy coastal bluff overlooking a deep Nordic fjord"
+                        class="camp-card__img"
+                        referrerpolicy="no-referrer"
+                        onerror="this.parentElement.classList.add('img-fallback-active')"
+                     >
+                     <div class="camp-card__fallback" aria-hidden="true">
+                        <span>Nærøyfjord Sea Bluff · 490m</span>
+                     </div>
+                     <div class="camp-card__scrim">
+                        <span class="camp-card__coords">60°56'41"N 06°56'08"E</span>
+                     </div>
+                  </div>
+                  <div class="camp-card__body">
+                     <div class="camp-card__meta">
+                        <span>Aurland Fjord Coast</span>
+                        <span aria-hidden="true">·</span>
+                        <span class="tabular-nums">490m Elevation</span>
+                        <span aria-hidden="true">·</span>
+                        <span>Storm-Guyed Geodesic</span>
+                     </div>
+                     <h3 class="camp-card__title">Nærøyfjord Sea Bluff Point</h3>
+                     <p class="camp-card__desc">
+                        Anchored into basalt cliff ledges 490 meters above tidal fjord waters. Includes sea-kayak launch access, storm-rated guy-lines, and panoramic aurora skylight.
+                     </p>
+                     <div class="camp-card__specs tabular-nums">
+                        <div>
+                           <span class="spec-label">Capacity</span>
+                           <strong class="spec-val">2–4 Explorers</strong>
+                        </div>
+                        <div>
+                           <span class="spec-label">Wind Rating</span>
+                           <strong class="spec-val">95 km/h Tested</strong>
+                        </div>
+                        <div>
+                           <span class="spec-label">Outfitting Rate</span>
+                           <strong class="spec-val">$310 / night</strong>
+                        </div>
+                     </div>
+                     <div class="camp-card__actions">
+                        <button type="button" class="btn-secondary js-inspect-camp" data-camp-id="naeroy-bluff">
+                           Inspect Trail &amp; Gear
+                        </button>
+                        <button type="button" class="btn-primary js-select-camp" data-camp-name="Nærøyfjord Sea Bluff Point" data-camp-price="310">
+                           Select Basecamp
+                        </button>
+                     </div>
+                  </div>
+               </article>
+
+               <!-- Card 4 -->
+               <article class="camp-card" data-category="alpine" data-elevation="2740" data-price="390" data-id="tre-cime-col">
+                  <div class="camp-card__media">
+                     <img
+                        src="/src/assets/images/dolomites_saddle_camp_1790520347150.jpg"
+                        alt="High altitude Dolomites saddle expedition camp"
+                        class="camp-card__img"
+                        referrerpolicy="no-referrer"
+                        onerror="this.parentElement.classList.add('img-fallback-active')"
+                     >
+                     <div class="camp-card__fallback" aria-hidden="true">
+                        <span>Tre Cime High Col · 2,740m</span>
+                     </div>
+                     <div class="camp-card__scrim">
+                        <span class="camp-card__coords">46°37'07"N 12°18'20"E</span>
+                     </div>
+                  </div>
+                  <div class="camp-card__body">
+                     <div class="camp-card__meta">
+                        <span>Sesto Dolomites</span>
+                        <span aria-hidden="true">·</span>
+                        <span class="tabular-nums">2,740m Elevation</span>
+                        <span aria-hidden="true">·</span>
+                        <span>Via Ferrata Access</span>
+                     </div>
+                     <h3 class="camp-card__title">Tre Cime Limestone Saddle Camp</h3>
+                     <p class="camp-card__desc">
+                        Positioned directly beneath vertical Dolomite towers with immediate access to Grade III via ferrata traverses, pre-stocked climbing hardware, and espresso rations.
+                     </p>
+                     <div class="camp-card__specs tabular-nums">
+                        <div>
+                           <span class="spec-label">Capacity</span>
+                           <strong class="spec-val">2–4 Alpinists</strong>
+                        </div>
+                        <div>
+                           <span class="spec-label">Nightly Window</span>
+                           <strong class="spec-val">-18°C Rated</strong>
+                        </div>
+                        <div>
+                           <span class="spec-label">Outfitting Rate</span>
+                           <strong class="spec-val">$390 / night</strong>
+                        </div>
+                     </div>
+                     <div class="camp-card__actions">
+                        <button type="button" class="btn-secondary js-inspect-camp" data-camp-id="tre-cime-col">
+                           Inspect Trail &amp; Gear
+                        </button>
+                        <button type="button" class="btn-primary js-select-camp" data-camp-name="Tre Cime Limestone Saddle Camp" data-camp-price="390">
+                           Select Basecamp
+                        </button>
+                     </div>
+                  </div>
+               </article>
+
+               <!-- Card 5 -->
+               <article class="camp-card" data-category="forest" data-elevation="1640" data-price="285" data-id="teton-tarn">
+                  <div class="camp-card__media">
+                     <img
+                        src="/src/assets/images/teton_subalpine_tarn_1790520367346.jpg"
+                        alt="Subalpine spruce and glacial tarn camp in Wyoming"
+                        class="camp-card__img"
+                        referrerpolicy="no-referrer"
+                        onerror="this.parentElement.classList.add('img-fallback-active')"
+                     >
+                     <div class="camp-card__fallback" aria-hidden="true">
+                        <span>Cascade Canyon Tarn · 1,640m</span>
+                     </div>
+                     <div class="camp-card__scrim">
+                        <span class="camp-card__coords">43°46'12"N 110°49'54"W</span>
+                     </div>
+                  </div>
+                  <div class="camp-card__body">
+                     <div class="camp-card__meta">
+                        <span>Grand Teton Backcountry</span>
+                        <span aria-hidden="true">·</span>
+                        <span class="tabular-nums">1,640m Elevation</span>
+                        <span aria-hidden="true">·</span>
+                        <span>Bear-Vault Equipped</span>
+                     </div>
+                     <h3 class="camp-card__title">Cascade Canyon Subalpine Tarn</h3>
+                     <p class="camp-card__desc">
+                        Surrounded by Engelmann spruce and granite canyon walls. Includes certified IGBC bear-resistant steel caches, gravity water purifiers, and stargazing cots.
+                     </p>
+                     <div class="camp-card__specs tabular-nums">
+                        <div>
+                           <span class="spec-label">Capacity</span>
+                           <strong class="spec-val">2–8 Campers</strong>
+                        </div>
+                        <div>
+                           <span class="spec-label">Nightly Window</span>
+                           <strong class="spec-val">-10°C Rated</strong>
+                        </div>
+                        <div>
+                           <span class="spec-label">Outfitting Rate</span>
+                           <strong class="spec-val">$285 / night</strong>
+                        </div>
+                     </div>
+                     <div class="camp-card__actions">
+                        <button type="button" class="btn-secondary js-inspect-camp" data-camp-id="teton-tarn">
+                           Inspect Trail &amp; Gear
+                        </button>
+                        <button type="button" class="btn-primary js-select-camp" data-camp-name="Cascade Canyon Subalpine Tarn" data-camp-price="285">
+                           Select Basecamp
+                        </button>
+                     </div>
+                  </div>
+               </article>
+
+               <!-- Card 6 -->
+               <article class="camp-card" data-category="fjord" data-elevation="320" data-price="330" data-id="lofoten-headland">
+                  <div class="camp-card__media">
+                     <img
+                        src="/src/assets/images/lofoten_arctic_headland_1790520388986.jpg"
+                        alt="Arctic headland camp overlooking Lofoten sea stacks"
+                        class="camp-card__img"
+                        referrerpolicy="no-referrer"
+                        onerror="this.parentElement.classList.add('img-fallback-active')"
+                     >
+                     <div class="camp-card__fallback" aria-hidden="true">
+                        <span>Lofoten Arctic Headland · 320m</span>
+                     </div>
+                     <div class="camp-card__scrim">
+                        <span class="camp-card__coords">68°04'51"N 13°32'19"E</span>
+                     </div>
+                  </div>
+                  <div class="camp-card__body">
+                     <div class="camp-card__meta">
+                        <span>Lofoten Archipelago</span>
+                        <span aria-hidden="true">·</span>
+                        <span class="tabular-nums">320m Elevation</span>
+                        <span aria-hidden="true">·</span>
+                        <span>Arctic Circle Outpost</span>
+                     </div>
+                     <h3 class="camp-card__title">Kvalvika Arctic Granite Headland</h3>
+                     <p class="camp-card__desc">
+                        Tucked into a turf-insulated amphitheater above white-sand Arctic surf beaches. Outfitted for midnight sun summer treks and autumn geomagnetic aurora observation.
+                     </p>
+                     <div class="camp-card__specs tabular-nums">
+                        <div>
+                           <span class="spec-label">Capacity</span>
+                           <strong class="spec-val">2–4 Explorers</strong>
+                        </div>
+                        <div>
+                           <span class="spec-label">Wind Rating</span>
+                           <strong class="spec-val">110 km/h Tested</strong>
+                        </div>
+                        <div>
+                           <span class="spec-label">Outfitting Rate</span>
+                           <strong class="spec-val">$330 / night</strong>
+                        </div>
+                     </div>
+                     <div class="camp-card__actions">
+                        <button type="button" class="btn-secondary js-inspect-camp" data-camp-id="lofoten-headland">
+                           Inspect Trail &amp; Gear
+                        </button>
+                        <button type="button" class="btn-primary js-select-camp" data-camp-name="Kvalvika Arctic Granite Headland" data-camp-price="330">
+                           Select Basecamp
+                        </button>
+                     </div>
+                  </div>
+               </article>
+            </div>
+
+            <div class="destinations__empty" id="destinations-empty" hidden>
+               <p class="destinations__empty-title">No wilderness outposts match your current filter criteria.</p>
+               <button type="button" class="btn-secondary" id="reset-destination-filters">Reset Terrain Filters</button>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== 3. CAPABILITIES / MECHANISM (Asymmetric Bento Grid) ====================-->
+      <section class="section capabilities" id="capabilities">
+         <div class="container">
+            <div class="section__header">
+               <div class="section__header-left">
+                  <p class="section__eyebrow">02. Expedition Engineering &amp; Logistics</p>
+                  <h2 class="section__title">Everything Required for Autonomous Backcountry Living</h2>
+                  <p class="section__subtitle">
+                     We eliminate the 28-kilogram pack burden. Arrive with personal boots and shell layers; your basecamp is already pitched, heated, and provisioned.
+                  </p>
+               </div>
+            </div>
+
+            <div class="bento-grid">
+               <!-- Span-2 Marquee Capability -->
+               <article class="bento-card bento-card--span-2 is-selected" data-capability="outfitting" tabindex="0" role="button" aria-pressed="true">
+                  <div class="bento-card__split">
+                     <div class="bento-card__content">
+                        <p class="bento-card__index">01. Turnkey Basecamp Outfitting</p>
+                        <h3 class="bento-card__title">420gsm Ripstop Army Duck Canvas &amp; Titanium Wood Stoves</h3>
+                        <p class="bento-card__text">
+                           Each outpost utilizes custom storm-guyed wall tents pitched on elevated cedar decks, paired with 850-fill goose down sleep systems, merino liners, and collapsible titanium wood burners that hold cabin warmth at 19°C even when exterior ridge temperatures drop to -18°C.
+                        </p>
+                        <div class="bento-card__meta">
+                           <span>100% Waterproof Hydrostatic Head</span>
+                           <span aria-hidden="true">·</span>
+                           <span>850-Fill RDS Down</span>
+                           <span aria-hidden="true">·</span>
+                           <span>Click to inspect hardware manifest</span>
+                        </div>
+                     </div>
+                     <div class="bento-card__media">
+                        <img
+                           src="/src/assets/images/camp_gear_outfitting_1790519703219.jpg"
+                           alt="Expedition camping gear, brass compass, topographic map, and titanium cookware on cedar table"
+                           class="bento-card__img"
+                           referrerpolicy="no-referrer"
+                           onerror="this.parentElement.classList.add('img-fallback-active')"
+                        >
+                     </div>
+                  </div>
+               </article>
+
+               <!-- Span-1 Capability -->
+               <article class="bento-card" data-capability="solar" tabindex="0" role="button" aria-pressed="false">
+                  <p class="bento-card__index">02. Zero-Trace Solar Microgrids</p>
+                  <h3 class="bento-card__title">1.8 kWh LiFePO4 Battery Banks &amp; UV-C Glacial Filtration</h3>
+                  <p class="bento-card__text">
+                     Silent solid-state solar arrays power camera battery lockers, medical CPAP ports, and dual-stage 0.02-micron ultrafiltration systems drawing from adjacent alpine snowmelt streams.
+                  </p>
+                  <div class="bento-card__meta">
+                     <span>Zero Diesel Generators</span>
+                     <span aria-hidden="true">·</span>
+                     <span class="tabular-nums">24L/hr Potable Output</span>
+                  </div>
+               </article>
+
+               <!-- Span-1 Capability -->
+               <article class="bento-card" data-capability="dispatch" tabindex="0" role="button" aria-pressed="false">
+                  <p class="bento-card__index">03. Satellite Weather &amp; Rescue Dispatch</p>
+                  <h3 class="bento-card__title">Iridium Mesh Telemetry &amp; IFMGA Route Briefings</h3>
+                  <p class="bento-card__text">
+                     Every party carries a paired Garmin inReach Messenger linked to our 24/7 Chamonix &amp; Jackson Hole meteorology desk for twice-daily barometric wind and avalanche bulletins.
+                  </p>
+                  <div class="bento-card__meta">
+                     <span>Global Iridium Coverage</span>
+                     <span aria-hidden="true">·</span>
+                     <span class="tabular-nums">14 Min Median Response</span>
+                  </div>
+               </article>
+
+               <!-- Span-2 Capability + Interactive Hardware Manifest Table -->
+               <div class="bento-card bento-card--span-2 bento-card--manifest">
+                  <div class="manifest__header">
+                     <div>
+                        <p class="bento-card__index">04. Live Standard-Issue Equipment Manifest</p>
+                        <h3 class="bento-card__title" id="manifest-active-title">Hardware Specification: 01. Turnkey Basecamp Outfitting</h3>
+                     </div>
+                     <div class="manifest__tabs" role="tablist" aria-label="Select equipment category">
+                        <button type="button" class="manifest__tab is-active" data-manifest="outfitting">Shelter &amp; Sleep</button>
+                        <button type="button" class="manifest__tab" data-manifest="solar">Power &amp; Water</button>
+                        <button type="button" class="manifest__tab" data-manifest="dispatch">Navigation &amp; Safety</button>
+                     </div>
+                  </div>
+
+                  <div class="manifest__table-wrap">
+                     <table class="manifest__table tabular-nums">
+                        <thead>
+                           <tr>
+                              <th>Component</th>
+                              <th>Specification / Model</th>
+                              <th>Field Rating</th>
+                              <th>Unit Mass</th>
+                           </tr>
+                        </thead>
+                        <tbody id="manifest-tbody">
+                           <tr>
+                              <td>Primary Shelter</td>
+                              <td>NordicCanvas 420gsm Ripstop Wall Tent</td>
+                              <td>110 km/h Wind · 4,000mm HH</td>
+                              <td>Pre-pitched</td>
+                           </tr>
+                           <tr>
+                              <td>Heating Unit</td>
+                              <td>SeekOutside Titanium Collapsible Wood Stove</td>
+                              <td>-20°C Exterior / +19°C Interior</td>
+                              <td>1.95 kg</td>
+                           </tr>
+                           <tr>
+                              <td>Sleep System</td>
+                              <td>Western Mountaineering 850-Fill Expeditions + R-7.3 Pad</td>
+                              <td>ISO Comfort -16°C</td>
+                              <td>1.42 kg</td>
+                           </tr>
+                           <tr>
+                              <td>Galley Kit</td>
+                              <td>Snow Peak Titanium Cookset &amp; Primus Multi-Fuel</td>
+                              <td>3,200W Simmer Control</td>
+                              <td>0.88 kg</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== 4. PROOF OF IMPACT & SCHEDULED EVENTS ====================-->
+      <section class="section events" id="events">
+         <div class="container">
+            <!-- Claim-to-Proof Quantitative Metrics Bar (Adjacent to Capabilities) -->
+            <div class="proof-metrics tabular-nums">
+               <div class="proof-metric">
+                  <p class="proof-metric__value">14,820</p>
+                  <p class="proof-metric__label">Backcountry Nights Logged (Jan 2021 – Sep 2026)</p>
+               </div>
+               <div class="proof-metric">
+                  <p class="proof-metric__value">99.6%</p>
+                  <p class="proof-metric__label">Leave-No-Trace Third-Party Soil &amp; Flora Audit Score</p>
+               </div>
+               <div class="proof-metric">
+                  <p class="proof-metric__value">14 min</p>
+                  <p class="proof-metric__label">Median Satellite Meteorology &amp; Field Dispatch Response</p>
+               </div>
+               <div class="proof-metric">
+                  <p class="proof-metric__value">1 : 4</p>
+                  <p class="proof-metric__label">Maximum IFMGA Mountain Guide-to-Guest Field Ratio</p>
+               </div>
+            </div>
+
+            <!-- Scheduled Events & Group Departures -->
+            <div class="section__header events__header">
+               <div class="section__header-left">
+                  <p class="section__eyebrow">03. 2026–2027 Guided Expedition Calendar</p>
+                  <h2 class="section__title">Upcoming Camping Events &amp; Field Departures</h2>
+                  <p class="section__subtitle">
+                     Join small-group backcountry convocations led by certified alpine naturalists, astrophotographers, and high-altitude chefs.
+                  </p>
+               </div>
+
+               <div class="segmented-control" role="tablist" aria-label="Filter events by season">
+                  <button type="button" class="segmented-control__btn is-active js-event-filter" data-season="all">
+                     All Seasons (5)
+                  </button>
+                  <button type="button" class="segmented-control__btn js-event-filter" data-season="autumn">
+                     Autumn Aurora
+                  </button>
+                  <button type="button" class="segmented-control__btn js-event-filter" data-season="winter">
+                     Winter Alpine
+                  </button>
+                  <button type="button" class="segmented-control__btn js-event-filter" data-season="summer">
+                     Summer Solstice
+                  </button>
+               </div>
+            </div>
+
+            <div class="events__table-container">
+               <table class="events__table tabular-nums">
+                  <thead>
+                     <tr>
+                        <th>Departure Window</th>
+                        <th>Expedition Event &amp; Focus</th>
+                        <th>Reserve Outpost</th>
+                        <th>Guide Ratio</th>
+                        <th>Open Berths</th>
+                        <th>All-Inclusive Rate</th>
+                        <th class="text-right">Action</th>
+                     </tr>
+                  </thead>
+                  <tbody id="events-tbody">
+                     <tr data-season="autumn">
+                        <td class="event-date">Oct 14 – Oct 18, 2026</td>
+                        <td>
+                           <strong class="event-name">Geomagnetic Aurora &amp; Astrophotography Convocation</strong>
+                           <div class="event-submeta">4 Nights · Equatorial Mount Tracking · Dark-Sky Class 1</div>
+                        </td>
+                        <td>Kvalvika Arctic Headland, Norway</td>
+                        <td>1 : 4</td>
+                        <td><span class="berth-count">3 of 8 Left</span></td>
+                        <td class="event-price">$1,480 / guest</td>
+                        <td class="text-right">
+                           <button type="button" class="btn-table-action js-book-event" data-event-title="Geomagnetic Aurora & Astrophotography (Oct 14–18)" data-camp="Kvalvika Arctic Granite Headland" data-date="2026-10-14">
+                              Reserve Berth
+                           </button>
+                        </td>
+                     </tr>
+                     <tr data-season="autumn">
+                        <td class="event-date">Nov 02 – Nov 06, 2026</td>
+                        <td>
+                           <strong class="event-name">Golden Larch Traverse &amp; High-Altitude Forage</strong>
+                           <div class="event-submeta">4 Nights · Open-Fire Alpine Gastronomy · Grade II Ridge</div>
+                        </td>
+                        <td>Tre Cime Limestone Saddle, Italy</td>
+                        <td>1 : 4</td>
+                        <td><span class="berth-count">5 of 8 Left</span></td>
+                        <td class="event-price">$1,620 / guest</td>
+                        <td class="text-right">
+                           <button type="button" class="btn-table-action js-book-event" data-event-title="Golden Larch Traverse & Forage (Nov 02–06)" data-camp="Tre Cime Limestone Saddle Camp" data-date="2026-11-02">
+                              Reserve Berth
+                           </button>
+                        </td>
+                     </tr>
+                     <tr data-season="winter">
+                        <td class="event-date">Jan 18 – Jan 23, 2027</td>
+                        <td>
+                           <strong class="event-name">Winter Glacier Bivouac &amp; Ski-Mountaineering</strong>
+                           <div class="event-submeta">5 Nights · Crevasse Rescue Clinic · Heated Wall Tents</div>
+                        </td>
+                        <td>Aiguille Granite Ridge, France</td>
+                        <td>1 : 3</td>
+                        <td><span class="berth-count">2 of 6 Left</span></td>
+                        <td class="event-price">$2,150 / guest</td>
+                        <td class="text-right">
+                           <button type="button" class="btn-table-action js-book-event" data-event-title="Winter Glacier Bivouac & Ski-Mountaineering (Jan 18–23)" data-camp="Aiguille Granite Ridge Outpost" data-date="2027-01-18">
+                              Reserve Berth
+                           </button>
+                        </td>
+                     </tr>
+                     <tr data-season="summer">
+                        <td class="event-date">Jun 19 – Jun 23, 2027</td>
+                        <td>
+                           <strong class="event-name">Midnight Sun Kayak &amp; Fjord Ridge Traverse</strong>
+                           <div class="event-submeta">4 Nights · 24-Hour Daylight · Sea-to-Summit Route</div>
+                        </td>
+                        <td>Nærøyfjord Sea Bluff, Norway</td>
+                        <td>1 : 4</td>
+                        <td><span class="berth-count">6 of 8 Left</span></td>
+                        <td class="event-price">$1,540 / guest</td>
+                        <td class="text-right">
+                           <button type="button" class="btn-table-action js-book-event" data-event-title="Midnight Sun Kayak & Fjord Ridge (Jun 19–23)" data-camp="Nærøyfjord Sea Bluff Point" data-date="2027-06-19">
+                              Reserve Berth
+                           </button>
+                        </td>
+                     </tr>
+                     <tr data-season="summer">
+                        <td class="event-date">Jul 11 – Jul 15, 2027</td>
+                        <td>
+                           <strong class="event-name">Boreal Canoe Portage &amp; Timber Sauna Retreat</strong>
+                           <div class="event-submeta">4 Nights · Fly-Fishing &amp; Cold Plunge · Family Friendly</div>
+                        </td>
+                        <td>Sylarna Mirror Lake, Sweden</td>
+                        <td>1 : 6</td>
+                        <td><span class="berth-count">4 of 10 Left</span></td>
+                        <td class="event-price">$1,290 / guest</td>
+                        <td class="text-right">
+                           <button type="button" class="btn-table-action js-book-event" data-event-title="Boreal Canoe Portage & Sauna Retreat (Jul 11–15)" data-camp="Sylarna Mirror Lake Sanctuary" data-date="2027-07-11">
+                              Reserve Berth
+                           </button>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+
+            <!-- Attributable Field Case Studies / Testimonials -->
+            <div class="testimonials-grid">
+               <blockquote class="testimonial-card">
+                  <p class="testimonial-card__quote">
+                     "Before working with NordicCamp, our 6-person glaciology team spent two full days hauling 160 kg of shelter and generator gear up to 2,400 meters. Having the Aiguille wall tents pre-pitched with 1.8 kWh solar banks gave us 34% more daylight sampling hours across our 10-day Chamonix field deployment."
+                  </p>
+                  <footer class="testimonial-card__author">
+                     <strong>Dr. Henrik Lindqvist</strong>
+                     <span>Lead Glaciologist · Uppsala Alpine Research Institute</span>
+                  </footer>
+               </blockquote>
+
+               <blockquote class="testimonial-card">
+                  <p class="testimonial-card__quote">
+                     "We previously avoided autumn backcountry trips with our two kids because sub-zero sleeping logistics felt overwhelming. At Sylarna Mirror Lake, the titanium wood stove kept the canvas cabin at 20°C all night while sleet fell outside, turning a daunting trek into four effortless days on the water."
+                  </p>
+                  <footer class="testimonial-card__author">
+                     <strong>clara &amp; Matteo Rossi</strong>
+                     <span>Architectural Photographers · Milan, Italy</span>
+                  </footer>
+               </blockquote>
+
+               <blockquote class="testimonial-card">
+                  <p class="testimonial-card__quote">
+                     "Our executive offsite needed genuine wilderness disconnection without compromising safety. The satellite weather desk rerouted our Nærøyfjord kayak crossing 40 minutes before a squall line hit, and hot ember-roasted char was waiting when we reached the bluff."
+                  </p>
+                  <footer class="testimonial-card__author">
+                     <strong>Soren Vestergaard</strong>
+                     <span>VP of Hardware Engineering · Polestar Mobility Sweden</span>
+                  </footer>
+               </blockquote>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== 5. PRICING & PASS TIERS ====================-->
+      <section class="section pricing" id="pricing">
+         <div class="container">
+            <div class="section__header">
+               <div class="section__header-left">
+                  <p class="section__eyebrow">04. Transparent Outfitting &amp; Pass Rates</p>
+                  <h2 class="section__title">Expedition Passes &amp; Private Reserve Charters</h2>
+                  <p class="section__subtitle">
+                     Every reservation includes pre-pitched canvas accommodation, seasoned birch firewood, freeze-dried &amp; fresh trail rations, and Garmin inReach telemetry.
+                  </p>
+               </div>
+
+               <div class="pricing__toggle-wrap">
+                  <div class="segmented-control" role="tablist" aria-label="Select pricing billing mode">
+                     <button type="button" class="segmented-control__btn is-active js-pricing-mode" data-mode="expedition">
+                        3-Night Expedition Pass
+                     </button>
+                     <button type="button" class="segmented-control__btn js-pricing-mode" data-mode="season">
+                        Annual Season Pass (Save 25%)
+                     </button>
+                  </div>
+               </div>
+            </div>
+
+            <div class="pricing__grid tabular-nums">
+               <!-- Tier 1 -->
+               <article class="pricing-card">
+                  <p class="pricing-card__index">01. Solo Backcountry Berth</p>
+                  <h3 class="pricing-card__title">Trailhead Solo</h3>
+                  <p class="pricing-card__desc">
+                     Designed for solo mountaineers, writers, and field researchers booking an individual private tent platform.
+                  </p>
+                  <div class="pricing-card__price-block">
+                     <span class="pricing-card__amount" data-expedition="$780" data-season="$2,340">$780</span>
+                     <span class="pricing-card__period" data-expedition-label="per 3-night stay ($260/night)" data-season-label="per year · up to 14 nights ($167/night)">per 3-night stay ($260/night)</span>
+                  </div>
+                  <ul class="pricing-card__features">
+                     <li>1x Private 4-Season Canvas Wall Tent</li>
+                     <li>850-Fill Down System + Titanium Wood Stove</li>
+                     <li>Garmin inReach Satellite SOS &amp; Weather Link</li>
+                     <li>3 Days Organic Trail Provisions &amp; Espresso Ration</li>
+                  </ul>
+                  <button type="button" class="btn-secondary btn-full js-select-tier" data-tier="Trailhead Solo" data-rate="260" data-guests="1">
+                     Select Solo Tier
+                  </button>
+               </article>
+
+               <!-- Tier 2 (Primary Featured) -->
+               <article class="pricing-card pricing-card--featured">
+                  <p class="pricing-card__index">02. Most Popular · 2–4 Guests</p>
+                  <h3 class="pricing-card__title">Basecamp Duo &amp; Quad</h3>
+                  <p class="pricing-card__desc">
+                     Complete private platform outfitting for partners, families, or climbing rope teams sharing a multi-berth stove tent.
+                  </p>
+                  <div class="pricing-card__price-block">
+                     <span class="pricing-card__amount" data-expedition="$1,140" data-season="$3,420">$1,140</span>
+                     <span class="pricing-card__period" data-expedition-label="per 3-night stay ($380/night total)" data-season-label="per year · up to 16 nights ($213/night)">per 3-night stay ($380/night total)</span>
+                  </div>
+                  <ul class="pricing-card__features">
+                     <li>Spacious 24m² Outfitter Wall Tent + Covered Porch</li>
+                     <li>Private Cedar Canoe or Via Ferrata Lanyard Kit</li>
+                     <li>1.8 kWh LiFePO4 Solar Locker &amp; UV Water System</li>
+                     <li>Half-Day Guided Route Orientation on Arrival</li>
+                  </ul>
+                  <button type="button" class="btn-primary btn-full js-select-tier" data-tier="Basecamp Duo & Quad" data-rate="380" data-guests="2">
+                     Select Basecamp Duo
+                  </button>
+               </article>
+
+               <!-- Tier 3 -->
+               <article class="pricing-card">
+                  <p class="pricing-card__index">03. Full Outpost Buyout · Up to 8 Guests</p>
+                  <h3 class="pricing-card__title">Private Reserve Charter</h3>
+                  <p class="pricing-card__desc">
+                     Exclusive buyout of an entire 3-tent wilderness sector with a dedicated IFMGA guide and backcountry camp chef.
+                  </p>
+                  <div class="pricing-card__price-block">
+                     <span class="pricing-card__amount" data-expedition="$2,850" data-season="$8,550">$2,850</span>
+                     <span class="pricing-card__period" data-expedition-label="per 3-night charter ($950/night total)" data-season-label="per year · 15 charter nights ($570/night)">per 3-night charter ($950/night total)</span>
+                  </div>
+                  <ul class="pricing-card__features">
+                     <li>Exclusive Access to All 3 Sector Tent Platforms</li>
+                     <li>Full-Time IFMGA Mountain Guide &amp; Alpine Chef</li>
+                     <li>Private Wood-Fired Shoreline or Ridge Sauna Tent</li>
+                     <li>Helicopter or Pack-Mule Heavy Equipment Портage</li>
+                  </ul>
+                  <button type="button" class="btn-secondary btn-full js-select-tier" data-tier="Private Reserve Charter" data-rate="950" data-guests="6">
+                     Request Private Charter
+                  </button>
+               </article>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== 6. CONVERSION / INTERACTIVE RESERVATION & CONTACT ====================-->
+      <section class="section contact" id="contact">
+         <div class="container">
+            <div class="contact__layout">
+               <!-- Left Column: Live Expedition Cost Estimator & Dispatch Info -->
+               <div class="contact__info">
+                  <p class="section__eyebrow">05. Direct Outpost Dispatch</p>
+                  <h2 class="section__title">Configure &amp; Reserve Your 2026–2027 Expedition</h2>
+                  <p class="section__subtitle">
+                     Lock in your dates with zero upfront deposit. Our Chamonix or Jackson Hole route coordinators will confirm trail conditions, permit quotas, and gear sizing within 4 hours.
+                  </p>
+
+                  <!-- Live Estimator Box -->
+                  <div class="estimator-card tabular-nums" id="live-estimator">
+                     <h3 class="estimator-card__title">Live Expedition Estimate</h3>
+                     <div class="estimator-card__row">
+                        <span>Selected Basecamp</span>
+                        <strong id="est-camp">Aiguille Granite Ridge Outpost</strong>
+                     </div>
+                     <div class="estimator-card__row">
+                        <span>Pass / Charter Tier</span>
+                        <strong id="est-tier">Basecamp Duo &amp; Quad</strong>
+                     </div>
+                     <div class="estimator-card__row">
+                        <span>Duration &amp; Party Size</span>
+                        <strong id="est-duration">3 Nights · 2 Guests</strong>
+                     </div>
+                     <div class="estimator-card__row">
+                        <span>Outfitting Add-Ons</span>
+                        <strong id="est-addons">$0</strong>
+                     </div>
+                     <div class="estimator-card__divider"></div>
+                     <div class="estimator-card__total">
+                        <span>Estimated Total (Incl. Permits)</span>
+                        <strong class="estimator-card__total-val" id="est-total">$1,140</strong>
+                     </div>
+                  </div>
+
+                  <div class="dispatch-offices">
+                     <div class="dispatch-office">
+                        <strong>European Alpine Desk (Chamonix)</strong>
+                        <p>142 Rue Joseph Vallot, 74400 Chamonix-Mont-Blanc · +33 4 50 53 91 20</p>
+                     </div>
+                     <div class="dispatch-office">
+                        <strong>North American Desk (Jackson Hole)</strong>
+                        <p>285 N Cache St, Jackson, WY 83001 · +1 (307) 733-8410</p>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Right Column: Validated Lead Capture & Reservation Form -->
+               <div class="contact__form-wrap">
+                  <form class="reserve-form" id="reserve-form" novalidate>
+                     <h3 class="reserve-form__heading">Expedition Reservation Request</h3>
+
+                     <div class="form-row form-row--2col">
+                        <div class="form-group">
+                           <label for="res-name" class="form-label">Full Name *</label>
+                           <input type="text" id="res-name" name="name" class="form-input" placeholder="e.g. Astrid Lindholm" required>
+                           <span class="form-error" id="err-name" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                           <label for="res-email" class="form-label">Email Address *</label>
+                           <input type="email" id="res-email" name="email" class="form-input" placeholder="astrid@nordic-expedition.se" required>
+                           <span class="form-error" id="err-email" role="alert"></span>
+                        </div>
+                     </div>
+
+                     <div class="form-row form-row--2col">
+                        <div class="form-group">
+                           <label for="res-phone" class="form-label">Satellite / Mobile Phone *</label>
+                           <input type="tel" id="res-phone" name="phone" class="form-input" placeholder="+46 70 123 45 67" required>
+                           <span class="form-error" id="err-phone" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                           <label for="res-date" class="form-label">Preferred Check-In Date *</label>
+                           <input type="date" id="res-date" name="date" class="form-input tabular-nums" value="2026-10-14" required>
+                           <span class="form-error" id="err-date" role="alert"></span>
+                        </div>
+                     </div>
+
+                     <div class="form-row form-row--2col">
+                        <div class="form-group">
+                           <label for="res-camp" class="form-label">Target Wilderness Basecamp</label>
+                           <select id="res-camp" name="camp" class="form-input">
+                              <option value="Aiguille Granite Ridge Outpost" data-rate="340">Aiguille Granite Ridge (Chamonix · 2,480m)</option>
+                              <option value="Sylarna Mirror Lake Sanctuary" data-rate="260">Sylarna Mirror Lake (Sweden · 1,120m)</option>
+                              <option value="Nærøyfjord Sea Bluff Point" data-rate="310">Nærøyfjord Sea Bluff (Norway · 490m)</option>
+                              <option value="Tre Cime Limestone Saddle Camp" data-rate="390">Tre Cime Limestone Saddle (Dolomites · 2,740m)</option>
+                              <option value="Cascade Canyon Subalpine Tarn" data-rate="285">Cascade Canyon Tarn (Wyoming · 1,640m)</option>
+                              <option value="Kvalvika Arctic Granite Headland" data-rate="330">Kvalvika Arctic Headland (Lofoten · 320m)</option>
+                           </select>
+                        </div>
+
+                        <div class="form-group">
+                           <label for="res-tier" class="form-label">Pass / Charter Tier</label>
+                           <select id="res-tier" name="tier" class="form-input">
+                              <option value="Trailhead Solo" data-multiplier="1">01. Trailhead Solo (1 Guest)</option>
+                              <option value="Basecamp Duo & Quad" data-multiplier="1.15" selected>02. Basecamp Duo &amp; Quad (2–4 Guests)</option>
+                              <option value="Private Reserve Charter" data-multiplier="2.6">03. Private Reserve Charter (Up to 8 Guests)</option>
+                           </select>
+                        </div>
+                     </div>
+
+                     <div class="form-row form-row--2col">
+                        <div class="form-group">
+                           <label for="res-nights" class="form-label">Expedition Duration (Nights)</label>
+                           <select id="res-nights" name="nights" class="form-input tabular-nums">
+                              <option value="2">2 Nights (Weekend Reconnaissance)</option>
+                              <option value="3" selected>3 Nights (Standard Expedition)</option>
+                              <option value="4">4 Nights (Guided Convocation)</option>
+                              <option value="7">7 Nights (Full Sector Immersion)</option>
+                           </select>
+                        </div>
+
+                        <div class="form-group">
+                           <label for="res-guests" class="form-label">Party Size (Guests)</label>
+                           <input type="number" id="res-guests" name="guests" class="form-input tabular-nums" min="1" max="8" value="2" required>
+                        </div>
+                     </div>
+
+                     <fieldset class="form-fieldset">
+                        <legend class="form-label">Optional Technical Outfitting Add-Ons</legend>
+                        <div class="addon-checkboxes">
+                           <label class="addon-check">
+                              <input type="checkbox" name="addon" value="180" data-label="IFMGA Private Route Guide (+$180)">
+                              <span>IFMGA Private Half-Day Route Guide (+$180)</span>
+                           </label>
+                           <label class="addon-check">
+                              <input type="checkbox" name="addon" value="95" data-label="Wood-Fired Sauna Tent Session (+$95)">
+                              <span>Private Wood-Fired Sauna Tent Allocation (+$95)</span>
+                           </label>
+                           <label class="addon-check">
+                              <input type="checkbox" name="addon" value="120" data-label="Astrophotography Equatorial Mount (+$120)">
+                              <span>Star-Tracker Equatorial Mount &amp; Tripod Locker (+$120)</span>
+                           </label>
+                        </div>
+                     </fieldset>
+
+                     <div class="form-group">
+                        <label for="res-notes" class="form-label">Dietary Provisions, Sleeping Bag Height, or Event Reference</label>
+                        <textarea id="res-notes" name="notes" rows="2" class="form-input" placeholder="Specify boot sizes for crampons, dietary allergies, or selected event departure..."></textarea>
+                     </div>
+
+                     <button type="submit" class="btn-primary btn-full reserve-form__submit">
+                        Confirm Expedition Reservation Request
+                     </button>
+                  </form>
+
+                  <!-- Confirmation State (Hidden until valid submission) -->
+                  <div class="reserve-confirmation" id="reserve-confirmation" hidden>
+                     <p class="reserve-confirmation__kicker">Dispatch Dossier Logged</p>
+                     <h3 class="reserve-confirmation__title">Your Wilderness Berth Request Is Confirmed</h3>
+                     <p class="reserve-confirmation__desc">
+                        Our route coordinator has allocated a provisional hold on your platform and transmitted your topographic briefing packet.
+                     </p>
+                     <div class="reserve-confirmation__summary tabular-nums" id="confirmation-details"></div>
+                     <div class="reserve-confirmation__actions">
+                        <button type="button" class="btn-primary" id="download-itinerary-btn">
+                           Download Field Dossier (.TXT)
+                        </button>
+                        <button type="button" class="btn-secondary" id="new-reservation-btn">
+                           Modify or Book Another Outpost
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <!--==================== 7. QUIET FOOTER ====================-->
+   <footer class="footer">
+      <div class="container footer__container">
+         <div class="footer__top">
+            <div class="footer__brand">
+               <a href="#home" class="footer__logo">NordicCamp</a>
+               <p class="footer__tagline">
+                  Turnkey backcountry architecture and low-impact alpine expeditions across 14 protected reserves.
+               </p>
+               <p class="footer__certifications">
+                  ISO 14001 Environmental Management · Leave No Trace Gold Partner · IFMGA Accredited Dispatch
+               </p>
+            </div>
+
+            <div class="footer__links-group">
+               <div>
+                  <h4 class="footer__heading">Navigation</h4>
+                  <ul class="footer__list">
+                     <li><a href="#destinations" class="footer__link">Destinations</a></li>
+                     <li><a href="#capabilities" class="footer__link">Capabilities</a></li>
+                     <li><a href="#events" class="footer__link">2026–2027 Events</a></li>
+                     <li><a href="#pricing" class="footer__link">Pass Pricing</a></li>
+                     <li><a href="#contact" class="footer__link">Reserve Outpost</a></li>
+                  </ul>
+               </div>
+               <div>
+                  <h4 class="footer__heading">Wilderness Sectors</h4>
+                  <ul class="footer__list">
+                     <li><a href="#destinations" class="footer__link js-footer-filter" data-filter="alpine">Chamonix &amp; Dolomites</a></li>
+                     <li><a href="#destinations" class="footer__link js-footer-filter" data-filter="forest">Jämtland &amp; Grand Teton</a></li>
+                     <li><a href="#destinations" class="footer__link js-footer-filter" data-filter="fjord">Nærøyfjord &amp; Lofoten</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+
+         <div class="footer__bottom">
+            <p>&copy; 2026 NordicCamp Wilderness Outposts. All rights reserved.</p>
+            <div class="footer__legal">
+               <button type="button" class="footer__text-btn" id="open-lnt-policy">Leave-No-Trace Protocol</button>
+               <span aria-hidden="true">·</span>
+               <button type="button" class="footer__text-btn" id="open-login-footer">Member Locker</button>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!--==================== INTERACTIVE MODAL 1: BASECAMP TRAIL & GEAR DOSSIER ====================-->
+   <div class="modal-backdrop" id="camp-modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="camp-modal-title">
+      <div class="modal-dialog">
+         <div class="modal-header">
+            <div>
+               <p class="modal-kicker" id="camp-modal-region">Chamonix Sector</p>
+               <h3 class="modal-title" id="camp-modal-title">Aiguille Granite Ridge Outpost</h3>
+            </div>
+            <button type="button" class="modal-close" id="close-camp-modal" aria-label="Close basecamp dossier">
+               <i class="ri-close-line"></i>
+            </button>
+         </div>
+
+         <div class="modal-body tabular-nums">
+            <div class="modal-stats-grid">
+               <div class="modal-stat">
+                  <span class="modal-stat__label">Coordinates</span>
+                  <strong id="camp-modal-coords">45°55'23"N 06°52'11"E</strong>
+               </div>
+               <div class="modal-stat">
+                  <span class="modal-stat__label">Approach Trail</span>
+                  <strong id="camp-modal-approach">6.4 km · +680m Vertical</strong>
+               </div>
+               <div class="modal-stat">
+                  <span class="modal-stat__label">Water Source</span>
+                  <strong id="camp-modal-water">UV-C Glacial Melt Tap</strong>
+               </div>
+               <div class="modal-stat">
+                  <span class="modal-stat__label">Outfitting Rate</span>
+                  <strong id="camp-modal-price">$340 / night</strong>
+               </div>
+            </div>
+
+            <p class="modal-description" id="camp-modal-desc"></p>
+
+            <div class="modal-section">
+               <h4 class="modal-section__title">Pre-Staged Outpost Locker Inventory</h4>
+               <ul class="modal-checklist" id="camp-modal-gear"></ul>
+            </div>
+         </div>
+
+         <div class="modal-footer">
+            <button type="button" class="btn-secondary" id="camp-modal-cancel">Close Dossier</button>
+            <button type="button" class="btn-primary" id="camp-modal-book">Proceed to Reserve This Outpost</button>
+         </div>
+      </div>
+   </div>
+
+   <!--==================== INTERACTIVE MODAL 2: MEMBER LOCKER / SIGN IN ====================-->
+   <div class="modal-backdrop" id="login-modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+      <div class="modal-dialog modal-dialog--narrow">
+         <div class="modal-header">
+            <div>
+               <p class="modal-kicker">Season Pass &amp; Dispatch Portal</p>
+               <h3 class="modal-title" id="login-modal-title">Member Gear &amp; Pass Locker</h3>
+            </div>
+            <button type="button" class="modal-close" id="close-login-modal" aria-label="Close member modal">
+               <i class="ri-close-line"></i>
+            </button>
+         </div>
+
+         <div class="modal-body">
+            <form id="member-login-form" novalidate>
+               <div class="form-group">
+                  <label for="member-email" class="form-label">Member Email</label>
+                  <input type="email" id="member-email" class="form-input" placeholder="explorer@nordiccamp.org" required>
+               </div>
+               <div class="form-group">
+                  <label for="member-pass" class="form-label">Expedition Pass ID or PIN</label>
+                  <input type="password" id="member-pass" class="form-input" placeholder="NC-2026-XXXX" required>
+               </div>
+               <span class="form-error" id="member-login-error" role="alert"></span>
+
+               <div class="modal-stack-actions">
+                  <button type="submit" class="btn-primary btn-full">Access Member Locker</button>
+                  <button type="button" class="btn-secondary btn-full" id="demo-member-btn">
+                     Load Demo Season Pass Holder
+                  </button>
+               </div>
+            </form>
+
+            <!-- Authenticated Member View -->
+            <div id="member-dashboard" hidden class="tabular-nums">
+               <div class="member-card">
+                  <p class="member-card__meta">Active Pass · NC-2026-8841 · Valid Thru Dec 2027</p>
+                  <h4 class="member-card__name" id="member-display-name">Erik Lindqvist</h4>
+                  <p class="member-card__nights">11 of 16 Annual Season Pass Nights Remaining</p>
+               </div>
+               <div class="member-upcoming">
+                  <p class="form-label">Upcoming Confirmed Berth</p>
+                  <p><strong>Aiguille Granite Ridge Outpost</strong> · Oct 14 – Oct 17, 2026</p>
+                  <p class="member-sub">Stove Wood Staged · Crampon Size EU 43 Logged</p>
+               </div>
+               <button type="button" class="btn-secondary btn-full" id="member-signout-btn">Sign Out of Locker</button>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!--=============== GSAP ===============-->
+   <script src="assets/js/gsap.min.js"></script>
+
+   <!--=============== MAIN JS ===============-->
+   <script src="assets/js/main.js"></script>
+</body>
+</html>

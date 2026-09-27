@@ -1,0 +1,15 @@
+{
+  "name": "responsive-camping-website",
+  "version": "1.0.0",
+  "description": "Responsive Camping Website Design Using HTML CSS & JavaScript",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "echo 'Static site - no build step required'",
+    "start": "node server.js",
+    "lint": "echo 'No lint configured'"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
